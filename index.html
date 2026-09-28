@@ -1,0 +1,2272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="David Koffi Aza — Professeur certifié, prêtre du Fâ, guide et acteur culturel béninois. Membre du Comité des rites Vodun du Bénin, président du CoNaCEB. Découvrez son parcours, ses interventions et son engagement pour la culture endogène." />
+<meta name="theme-color" content="#0a0705" />
+<title>David Koffi Aza — Professeur · Prêtre du Fâ · Acteur culturel</title>
+
+<meta property="og:title" content="David Koffi Aza — Professeur & Prêtre du Fâ" />
+<meta property="og:description" content="Prêtre du Fâ depuis 1997, membre du Comité des rites Vodun du Bénin, président du CoNaCEB. Un acteur majeur de la culture endogène béninoise." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   RESET & VARIABLES
+   ============================================================ */
+:root{
+  --black:#0a0705;
+  --black-2:#120d08;
+  --black-3:#1a120b;
+  --brown:#2b1a0f;
+  --off-white:#F5F0E8;
+  --white:#FFFFFF;
+  --gold:#C9972B;
+  --gold-light:#E8BF5A;
+  --gold-dark:#8B6914;
+  --red:#8B1A1A;
+  --red-light:#B22222;
+  --green:#2E7D32;
+  --grey:#8B8070;
+  --grey-2:#4a4030;
+
+  --font-display:'Anton', 'Bebas Neue', sans-serif;
+  --font-alt:'Bebas Neue', 'Anton', sans-serif;
+  --font-serif:'Cinzel', serif;
+  --font-body:'Inter', system-ui, sans-serif;
+
+  --ease:cubic-bezier(.22,1,.36,1);
+  --ease-2:cubic-bezier(.65,0,.35,1);
+  --radius:6px;
+  --max:1440px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-body);
+  background:var(--black);
+  color:var(--off-white);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  cursor:none;
+}
+body.no-scroll{overflow:hidden}
+body.menu-open{overflow:hidden}
+
+img{max-width:100%;display:block;user-select:none}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font-family:inherit;cursor:none;border:none;background:none;color:inherit}
+input,textarea,select{font-family:inherit;cursor:none}
+
+::selection{background:var(--gold);color:var(--black)}
+
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:var(--grey-2);border-radius:10px}
+::-webkit-scrollbar-thumb:hover{background:var(--gold)}
+
+/* ============================================================
+   TYPOGRAPHIE
+   ============================================================ */
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:.9;text-transform:uppercase;letter-spacing:.01em}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  font-family:var(--font-body);
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:.42em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+.eyebrow::before{
+  content:'';
+  width:44px;height:1px;background:var(--gold);
+}
+
+/* ============================================================
+   CONTAINER
+   ============================================================ */
+.container{
+  width:100%;
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 clamp(20px, 4vw, 60px);
+}
+.section{
+  padding:clamp(90px, 11vw, 160px) 0;
+  position:relative;
+}
+
+/* ============================================================
+   CUSTOM CURSOR
+   ============================================================ */
+.cursor-dot,
+.cursor-ring{
+  position:fixed;
+  top:0;left:0;
+  pointer-events:none;
+  z-index:99999;
+  transform:translate(-50%,-50%);
+  transition:opacity .3s;
+  will-change:transform;
+}
+.cursor-dot{
+  width:6px;height:6px;
+  background:var(--gold);
+  border-radius:50%;
+  transition:transform .12s var(--ease), background .3s, width .3s, height .3s;
+}
+.cursor-ring{
+  width:38px;height:38px;
+  border:1.5px solid rgba(201,151,43,.55);
+  border-radius:50%;
+  transition:transform .28s var(--ease), width .35s var(--ease), height .35s var(--ease), background .35s, border-color .35s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.cursor-ring .cursor-label{
+  font-family:var(--font-body);
+  font-size:.55rem;
+  font-weight:700;
+  letter-spacing:.15em;
+  color:var(--black);
+  opacity:0;
+  transition:opacity .25s;
+  text-transform:uppercase;
+}
+.cursor-hover .cursor-dot{transform:translate(-50%,-50%) scale(0)}
+.cursor-hover .cursor-ring{
+  width:80px;height:80px;
+  background:var(--gold);
+  border-color:var(--gold);
+}
+.cursor-hover .cursor-ring .cursor-label{opacity:1}
+.cursor-link .cursor-ring{
+  width:60px;height:60px;
+  border-color:var(--gold);
+  background:rgba(201,151,43,.12);
+}
+.cursor-media .cursor-ring{
+  width:100px;height:100px;
+  background:var(--gold);
+  border-color:var(--gold);
+}
+.cursor-media .cursor-ring .cursor-label{opacity:1}
+
+@media (hover:none), (pointer:coarse){
+  .cursor-dot,.cursor-ring{display:none!important}
+  body,button,input,textarea,select,a{cursor:auto!important}
+}
+
+/* ============================================================
+   PRELOADER
+   ============================================================ */
+.preloader{
+  position:fixed;
+  inset:0;
+  background:var(--black);
+  z-index:100000;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  transition:opacity .8s var(--ease), visibility .8s;
+}
+.preloader.done{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+.preloader-inner{
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+.preloader-title{
+  font-family:var(--font-display);
+  font-size:clamp(2.4rem, 9vw, 7rem);
+  color:var(--off-white);
+  line-height:.9;
+  letter-spacing:.02em;
+  display:flex;
+  justify-content:center;
+  overflow:hidden;
+}
+.preloader-title span{
+  display:inline-block;
+  transform:translateY(110%);
+  opacity:0;
+  animation:letterUp .9s var(--ease) forwards;
+}
+.preloader-title span:nth-child(1){animation-delay:.05s}
+.preloader-title span:nth-child(2){animation-delay:.12s}
+.preloader-title span:nth-child(3){animation-delay:.19s}
+.preloader-title span:nth-child(4){animation-delay:.26s}
+.preloader-title span:nth-child(5){animation-delay:.33s}
+.preloader-title span:nth-child(6){animation-delay:.4s}
+.preloader-title span:nth-child(7){animation-delay:.47s}
+@keyframes letterUp{
+  to{transform:translateY(0);opacity:1}
+}
+.preloader-sub{
+  font-family:var(--font-alt);
+  font-size:clamp(1rem, 3.2vw, 2rem);
+  letter-spacing:.4em;
+  color:var(--gold);
+  margin-top:12px;
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp .8s var(--ease) 0.9s forwards;
+  padding-left:.4em;
+}
+@keyframes fadeUp{
+  to{opacity:1;transform:translateY(0)}
+}
+.preloader-bar{
+  width:min(260px, 60vw);
+  height:2px;
+  background:rgba(245,240,232,.1);
+  margin-top:44px;
+  position:relative;
+  overflow:hidden;
+  border-radius:2px;
+}
+.preloader-bar::after{
+  content:'';
+  position:absolute;
+  top:0;left:0;height:100%;
+  width:0%;
+  background:linear-gradient(90deg, var(--gold), var(--gold-light));
+  transition:width .3s linear;
+  box-shadow:0 0 14px rgba(201,151,43,.65);
+}
+.preloader-count{
+  font-family:var(--font-alt);
+  font-size:.9rem;
+  letter-spacing:.4em;
+  color:var(--grey);
+  margin-top:18px;
+}
+.preloader-count span{color:var(--gold)}
+.preloader-glow{
+  position:absolute;
+  width:520px;height:520px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(201,151,43,.22) 0%, rgba(201,151,43,0) 70%);
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  animation:glowPulse 3s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes glowPulse{
+  0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.7}
+  50%{transform:translate(-50%,-50%) scale(1.15);opacity:1}
+}
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+.header{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:9000;
+  padding:22px 0;
+  transition:padding .4s var(--ease), background .4s var(--ease), backdrop-filter .4s;
+  border-bottom:1px solid transparent;
+}
+.header.scrolled{
+  padding:12px 0;
+  background:rgba(10,7,5,.85);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(201,151,43,.14);
+}
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.logo{
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+  font-family:var(--font-display);
+  font-size:1.3rem;
+  color:var(--off-white);
+  letter-spacing:.02em;
+  position:relative;
+}
+.logo .logo-main{
+  color:var(--off-white);
+  display:flex;
+  overflow:hidden;
+}
+.logo .logo-main span{
+  display:inline-block;
+  animation:logoIn .7s var(--ease) both;
+}
+.logo .logo-main span:nth-child(1){animation-delay:.1s}
+.logo .logo-main span:nth-child(2){animation-delay:.16s}
+.logo .logo-main span:nth-child(3){animation-delay:.22s}
+.logo .logo-main span:nth-child(4){animation-delay:.28s}
+.logo .logo-main span:nth-child(5){animation-delay:.34s}
+.logo .logo-main span:nth-child(6){animation-delay:.4s}
+@keyframes logoIn{
+  from{transform:translateY(100%);opacity:0}
+  to{transform:translateY(0);opacity:1}
+}
+.logo .logo-sub{
+  font-family:var(--font-alt);
+  font-size:.58rem;
+  letter-spacing:.4em;
+  color:var(--gold);
+  margin-top:2px;
+  padding-left:.1em;
+}
+.logo-line{
+  position:absolute;
+  bottom:-3px;left:0;
+  height:2px;width:0;
+  background:var(--gold);
+  transition:width .5s var(--ease);
+}
+.header.scrolled .logo-line,
+.logo:hover .logo-line{width:100%}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:30px;
+}
+.nav-links a{
+  font-size:.76rem;
+  font-weight:600;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--off-white);
+  position:relative;
+  padding:6px 0;
+  transition:color .3s;
+}
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  left:0;bottom:0;
+  width:0;height:1.5px;
+  background:var(--gold);
+  transition:width .35s var(--ease);
+}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{width:100%}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:16px 32px;
+  font-family:var(--font-body);
+  font-size:.74rem;
+  font-weight:700;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  border-radius:2px;
+  position:relative;
+  overflow:hidden;
+  transition:transform .35s var(--ease), color .35s, box-shadow .35s;
+  white-space:nowrap;
+}
+.btn span{position:relative;z-index:2;display:inline-flex;align-items:center;gap:10px}
+.btn::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:var(--gold);
+  transform:translateY(101%);
+  transition:transform .45s var(--ease);
+  z-index:1;
+}
+.btn:hover::before{transform:translateY(0)}
+.btn:hover{color:var(--black)}
+.btn-primary{
+  background:linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color:var(--black);
+  box-shadow:0 12px 30px -12px rgba(201,151,43,.6);
+}
+.btn-primary::before{background:var(--off-white)}
+.btn-primary:hover{box-shadow:0 18px 40px -12px rgba(201,151,43,.85)}
+.btn-ghost{
+  background:transparent;
+  color:var(--off-white);
+  border:1.5px solid rgba(245,240,232,.3);
+}
+.btn-ghost:hover{color:var(--black);border-color:var(--gold)}
+
+.btn .arrow{transition:transform .35s var(--ease)}
+.btn:hover .arrow{transform:translateX(5px)}
+
+/* Hamburger */
+.burger{
+  display:none;
+  flex-direction:column;
+  gap:6px;
+  padding:10px;
+  z-index:9500;
+  position:relative;
+}
+.burger span{
+  width:28px;height:2px;
+  background:var(--off-white);
+  transition:transform .4s var(--ease), opacity .3s, background .3s;
+  display:block;
+}
+.burger.open span{background:var(--gold)}
+.burger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.burger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* Mobile menu */
+.mobile-menu{
+  position:fixed;
+  inset:0;
+  background:var(--black);
+  z-index:9400;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:100px 8vw 60px;
+  clip-path:circle(0% at 92% 6%);
+  transition:clip-path .8s var(--ease-2);
+  pointer-events:none;
+}
+.mobile-menu.open{
+  clip-path:circle(150% at 92% 6%);
+  pointer-events:auto;
+}
+.mobile-menu::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(201,151,43,.08), transparent 55%),
+    radial-gradient(circle at 80% 20%, rgba(139,26,26,.06), transparent 55%);
+  pointer-events:none;
+}
+.mobile-menu nav{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  position:relative;
+  z-index:2;
+  max-width:520px;
+  width:100%;
+  margin:0 auto;
+}
+.mobile-menu a{
+  font-family:var(--font-display);
+  font-size:clamp(2rem, 9vw, 3.4rem);
+  color:var(--off-white);
+  padding:8px 0;
+  display:flex;
+  align-items:baseline;
+  gap:16px;
+  border-bottom:1px solid rgba(245,240,232,.08);
+  opacity:0;
+  transform:translateX(-40px);
+  transition:opacity .5s var(--ease), transform .5s var(--ease), color .3s;
+}
+.mobile-menu.open a{
+  opacity:1;
+  transform:translateX(0);
+}
+.mobile-menu.open a:nth-child(1){transition-delay:.3s}
+.mobile-menu.open a:nth-child(2){transition-delay:.37s}
+.mobile-menu.open a:nth-child(3){transition-delay:.44s}
+.mobile-menu.open a:nth-child(4){transition-delay:.51s}
+.mobile-menu.open a:nth-child(5){transition-delay:.58s}
+.mobile-menu.open a:nth-child(6){transition-delay:.65s}
+.mobile-menu a:hover{color:var(--gold)}
+.mobile-menu a .num{
+  font-family:var(--font-alt);
+  font-size:.75rem;
+  letter-spacing:.3em;
+  color:var(--gold);
+  opacity:.7;
+}
+.mobile-menu .mobile-meta{
+  position:relative;
+  z-index:2;
+  max-width:520px;
+  width:100%;
+  margin:40px auto 0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:22px;
+  font-size:.75rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--grey);
+}
+.mobile-menu .mobile-meta a{color:var(--grey);border:none;font-family:var(--font-body);font-size:.75rem;padding:0}
+.mobile-menu .mobile-meta a:hover{color:var(--gold)}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  padding:140px 0 80px;
+  background:var(--black);
+}
+.hero-bg-text{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-family:var(--font-display);
+  font-size:clamp(16rem, 38vw, 42rem);
+  color:rgba(245,240,232,.022);
+  white-space:nowrap;
+  letter-spacing:-.03em;
+  pointer-events:none;
+  user-select:none;
+  line-height:.8;
+  z-index:0;
+  will-change:transform;
+}
+.hero-glow{
+  position:absolute;
+  border-radius:50%;
+  pointer-events:none;
+  filter:blur(80px);
+  z-index:0;
+}
+.hero-glow.g1{
+  width:520px;height:520px;
+  background:rgba(201,151,43,.12);
+  top:-120px;right:-120px;
+  animation:floatY 12s ease-in-out infinite;
+}
+.hero-glow.g2{
+  width:420px;height:420px;
+  background:rgba(139,26,26,.09);
+  bottom:-140px;left:-100px;
+  animation:floatY 15s ease-in-out infinite reverse;
+}
+@keyframes floatY{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-30px)}
+}
+
+.hero-grid{
+  position:relative;
+  z-index:3;
+  display:grid;
+  grid-template-columns:1.15fr 1fr;
+  gap:60px;
+  align-items:center;
+  width:100%;
+}
+.hero-content{max-width:680px}
+
+.hero-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  padding:8px 16px;
+  border:1px solid rgba(201,151,43,.35);
+  border-radius:100px;
+  font-size:.66rem;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:26px;
+  background:rgba(201,151,43,.05);
+}
+.hero-tag .dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 10px var(--gold);
+  animation:dotPulse 1.8s ease-in-out infinite;
+}
+@keyframes dotPulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.4;transform:scale(.7)}
+}
+
+.hero-title{
+  font-size:clamp(3rem, 9vw, 7.5rem);
+  color:var(--off-white);
+  line-height:.86;
+  margin-bottom:12px;
+}
+.hero-title .line{
+  display:block;
+  overflow:hidden;
+}
+.hero-title .line > span{
+  display:inline-block;
+  transform:translateY(105%);
+  transition:transform 1s var(--ease);
+}
+.hero-ready .hero-title .line > span{transform:translateY(0)}
+.hero-title .line:nth-child(1) > span{transition-delay:.15s}
+.hero-title .line:nth-child(2) > span{transition-delay:.28s}
+.hero-title .accent{color:var(--gold)}
+
+.hero-sub{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 22px;
+  margin:28px 0 26px;
+  font-family:var(--font-alt);
+  font-size:clamp(1rem, 2vw, 1.4rem);
+  letter-spacing:.22em;
+  color:var(--off-white);
+  text-transform:uppercase;
+}
+.hero-sub span{
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity .7s var(--ease), transform .7s var(--ease);
+}
+.hero-ready .hero-sub span{opacity:1;transform:translateY(0)}
+.hero-ready .hero-sub span:nth-child(1){transition-delay:.6s}
+.hero-ready .hero-sub span:nth-child(2){transition-delay:.72s}
+.hero-ready .hero-sub span:nth-child(3){transition-delay:.84s}
+.hero-sub span:not(:last-child)::after{
+  content:'';
+  width:5px;height:5px;
+  background:var(--gold);
+  border-radius:50%;
+  display:inline-block;
+}
+
+.hero-desc{
+  color:rgba(245,240,232,.72);
+  font-size:1.02rem;
+  max-width:520px;
+  margin-bottom:38px;
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .8s var(--ease) .95s, transform .8s var(--ease) .95s;
+}
+.hero-ready .hero-desc{opacity:1;transform:translateY(0)}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .8s var(--ease) 1.1s, transform .8s var(--ease) 1.1s;
+}
+.hero-ready .hero-actions{opacity:1;transform:translateY(0)}
+
+.hero-visual{
+  position:relative;
+  aspect-ratio:4/5;
+  max-width:520px;
+  margin-left:auto;
+  width:100%;
+}
+.hero-visual-mask{
+  position:relative;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  border-radius:4px;
+  clip-path:inset(100% 0 0 0);
+  transition:clip-path 1.4s var(--ease) .3s;
+}
+.hero-ready .hero-visual-mask{clip-path:inset(0 0 0 0)}
+.hero-visual-mask img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:contrast(1.05) saturate(.95);
+  transform:scale(1.08);
+  transition:transform 8s var(--ease);
+  will-change:transform;
+}
+.hero-ready .hero-visual-mask img{transform:scale(1)}
+
+.hero-visual::before{
+  content:'';
+  position:absolute;
+  inset:-14px -14px 14px 14px;
+  border:1.5px solid rgba(201,151,43,.4);
+  z-index:-1;
+  border-radius:4px;
+  transition:inset .6s var(--ease);
+}
+.hero-visual:hover::before{inset:-8px -8px 8px 8px}
+
+.hero-badge{
+  position:absolute;
+  bottom:-24px;left:-24px;
+  background:linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color:var(--black);
+  padding:20px 26px;
+  border-radius:2px;
+  font-family:var(--font-alt);
+  line-height:1;
+  box-shadow:0 20px 40px -14px rgba(201,151,43,.5);
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .8s var(--ease) 1.35s, transform .8s var(--ease) 1.35s;
+  z-index:4;
+}
+.hero-ready .hero-badge{opacity:1;transform:translateY(0)}
+.hero-badge strong{
+  font-size:1.8rem;
+  display:block;
+  letter-spacing:.01em;
+}
+.hero-badge span{
+  font-size:.6rem;
+  letter-spacing:.3em;
+  font-family:var(--font-body);
+  font-weight:700;
+  text-transform:uppercase;
+  opacity:.7;
+}
+
+.scroll-hint{
+  position:absolute;
+  bottom:34px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+  font-size:.6rem;
+  letter-spacing:.38em;
+  text-transform:uppercase;
+  color:var(--grey);
+  z-index:4;
+  opacity:0;
+  transition:opacity 1s var(--ease) 1.6s;
+}
+.hero-ready .scroll-hint{opacity:1}
+.scroll-hint .line-anim{
+  width:1px;height:50px;
+  background:linear-gradient(to bottom, var(--gold), transparent);
+  animation:scrollDown 2s ease-in-out infinite;
+}
+@keyframes scrollDown{
+  0%{transform:scaleY(0);transform-origin:top}
+  50%{transform:scaleY(1);transform-origin:top}
+  51%{transform-origin:bottom}
+  100%{transform:scaleY(0);transform-origin:bottom}
+}
+
+/* ============================================================
+   SECTION HEADER
+   ============================================================ */
+.section-head{
+  position:relative;
+  margin-bottom:clamp(50px, 7vw, 90px);
+  z-index:2;
+}
+.section-head.center{text-align:center}
+.section-head.center .eyebrow{justify-content:center}
+.section-num{
+  position:absolute;
+  top:-30px;
+  right:0;
+  font-family:var(--font-display);
+  font-size:clamp(6rem, 16vw, 13rem);
+  color:rgba(245,240,232,.035);
+  line-height:.8;
+  pointer-events:none;
+  user-select:none;
+  z-index:0;
+}
+.section-title{
+  font-size:clamp(2.2rem, 6.4vw, 5rem);
+  color:var(--off-white);
+  margin-top:18px;
+  position:relative;
+  z-index:2;
+}
+.section-title .accent{color:var(--gold)}
+.section-lead{
+  max-width:620px;
+  color:rgba(245,240,232,.66);
+  margin-top:22px;
+  font-size:1rem;
+  position:relative;
+  z-index:2;
+}
+.section-head.center .section-lead{margin-left:auto;margin-right:auto}
+
+/* ============================================================
+   REVEAL ANIMATIONS
+   ============================================================ */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity .9s var(--ease), transform .9s var(--ease);
+  will-change:opacity, transform;
+}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal-left{transform:translateX(-60px)}
+.reveal-left.in{transform:translateX(0)}
+.reveal-right{transform:translateX(60px)}
+.reveal-right.in{transform:translateX(0)}
+.reveal-scale{transform:scale(.92);opacity:0}
+.reveal-scale.in{transform:scale(1);opacity:1}
+.reveal-clip{
+  clip-path:inset(0 0 100% 0);
+  opacity:1;
+  transform:none;
+  transition:clip-path 1.1s var(--ease);
+}
+.reveal-clip.in{clip-path:inset(0 0 0 0)}
+
+.d1{transition-delay:.08s}
+.d2{transition-delay:.16s}
+.d3{transition-delay:.24s}
+.d4{transition-delay:.32s}
+.d5{transition-delay:.4s}
+.d6{transition-delay:.48s}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about{
+  background:var(--black-2);
+  position:relative;
+  overflow:hidden;
+}
+.about::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 80% 10%, rgba(201,151,43,.06), transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(139,26,26,.05), transparent 45%);
+  pointer-events:none;
+}
+.about-grid{
+  display:grid;
+  grid-template-columns:.95fr 1.05fr;
+  gap:clamp(40px, 6vw, 90px);
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+.about-photo{
+  position:relative;
+  aspect-ratio:4/5;
+}
+.about-photo-frame{
+  position:relative;
+  overflow:hidden;
+  border-radius:4px;
+  height:100%;
+  clip-path:inset(0 0 0 0);
+}
+.about-photo-frame img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 1.6s var(--ease);
+}
+.about-photo:hover .about-photo-frame img{transform:scale(1.05)}
+.about-photo::before{
+  content:'';
+  position:absolute;
+  top:-16px;left:-16px;
+  width:60%;height:60%;
+  border-top:2px solid var(--gold);
+  border-left:2px solid var(--gold);
+  z-index:3;
+  pointer-events:none;
+  transition:all .6s var(--ease);
+}
+.about-photo::after{
+  content:'';
+  position:absolute;
+  bottom:-16px;right:-16px;
+  width:60%;height:60%;
+  border-bottom:2px solid var(--gold);
+  border-right:2px solid var(--gold);
+  z-index:3;
+  pointer-events:none;
+  transition:all .6s var(--ease);
+}
+.about-photo:hover::before,
+.about-photo:hover::after{width:72%;height:72%}
+
+.about-text .role-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 14px;
+  margin:24px 0 30px;
+}
+.about-text .role-list span{
+  padding:7px 16px;
+  border:1px solid rgba(201,151,43,.3);
+  border-radius:100px;
+  font-size:.68rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:600;
+}
+.about-text p{
+  color:rgba(245,240,232,.72);
+  margin-bottom:16px;
+  font-size:1.02rem;
+  max-width:560px;
+}
+.about-text p.lead{
+  color:var(--off-white);
+  font-size:1.12rem;
+  font-family:var(--font-alt);
+  letter-spacing:.03em;
+  line-height:1.5;
+}
+
+.about-stats{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:24px;
+  margin-top:44px;
+  padding-top:36px;
+  border-top:1px solid rgba(245,240,232,.1);
+}
+.stat strong{
+  display:block;
+  font-family:var(--font-display);
+  font-size:clamp(2rem, 4.5vw, 3.2rem);
+  color:var(--gold);
+  line-height:1;
+}
+.stat span{
+  display:block;
+  font-size:.64rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--grey);
+  margin-top:8px;
+  font-weight:600;
+}
+
+/* Timeline */
+.timeline{
+  margin-top:clamp(70px, 10vw, 130px);
+  position:relative;
+  z-index:2;
+  padding-top:60px;
+  border-top:1px solid rgba(245,240,232,.08);
+}
+.timeline-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+  gap:30px;
+  margin-top:50px;
+  position:relative;
+}
+.timeline-item{
+  position:relative;
+  padding-top:34px;
+}
+.timeline-item::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;
+  width:12px;height:12px;
+  border-radius:50%;
+  background:var(--black-2);
+  border:2px solid var(--gold);
+  transition:background .3s, transform .3s;
+}
+.timeline-item::after{
+  content:'';
+  position:absolute;
+  top:5px;left:14px;
+  width:calc(100% + 30px);
+  height:1.5px;
+  background:rgba(201,151,43,.18);
+}
+.timeline-item:last-child::after{display:none}
+.timeline-item:hover::before{background:var(--gold);transform:scale(1.2)}
+.timeline-item .year{
+  font-family:var(--font-display);
+  font-size:1.5rem;
+  color:var(--gold);
+  line-height:1;
+  margin-bottom:10px;
+}
+.timeline-item h4{
+  font-family:var(--font-body);
+  font-size:.84rem;
+  font-weight:700;
+  letter-spacing:.06em;
+  color:var(--off-white);
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.timeline-item p{
+  font-size:.84rem;
+  color:var(--grey);
+  line-height:1.6;
+}
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+.services{
+  background:var(--black);
+  position:relative;
+  overflow:hidden;
+}
+.services::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:1px;
+  background:linear-gradient(90deg, transparent, rgba(201,151,43,.5), transparent);
+}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:20px;
+  position:relative;
+  z-index:2;
+}
+.service-card{
+  padding:40px 28px;
+  border:1px solid rgba(245,240,232,.1);
+  border-radius:4px;
+  background:linear-gradient(180deg, rgba(245,240,232,.02), rgba(245,240,232,0));
+  position:relative;
+  overflow:hidden;
+  transition:transform .5s var(--ease), border-color .4s, background .4s;
+  min-height:260px;
+  display:flex;
+  flex-direction:column;
+}
+.service-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:3px;
+  background:linear-gradient(90deg, var(--gold), var(--red));
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .5s var(--ease);
+}
+.service-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(201,151,43,.5);
+  background:linear-gradient(180deg, rgba(201,151,43,.05), rgba(245,240,232,0));
+}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{
+  width:52px;height:52px;
+  border-radius:12px;
+  background:linear-gradient(135deg, rgba(201,151,43,.15), rgba(139,26,26,.1));
+  color:var(--gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:22px;
+  font-size:1.3rem;
+  transition:background .3s, color .3s, transform .5s var(--ease);
+}
+.service-card:hover .service-icon{
+  background:var(--gold);
+  color:var(--black);
+  transform:rotate(-6deg) scale(1.05);
+}
+.service-card h3{
+  font-family:var(--font-alt);
+  font-size:1.15rem;
+  letter-spacing:.05em;
+  color:var(--off-white);
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+.service-card p{
+  font-size:.85rem;
+  color:var(--grey);
+  line-height:1.6;
+  flex:1;
+}
+
+/* ============================================================
+   GALERIE
+   ============================================================ */
+.gallery{
+  background:var(--black-2);
+  position:relative;
+}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(12, 1fr);
+  grid-auto-rows:100px;
+  gap:14px;
+  position:relative;
+  z-index:2;
+}
+.gallery-item{
+  position:relative;
+  overflow:hidden;
+  border-radius:4px;
+  cursor:none;
+  transition:transform .5s var(--ease);
+}
+.gallery-item img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 1.4s var(--ease);
+}
+.gallery-item:hover img{transform:scale(1.08)}
+.gallery-item::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, transparent 50%, rgba(0,0,0,.75));
+  opacity:0;
+  transition:opacity .45s var(--ease);
+}
+.gallery-item:hover::after{opacity:1}
+.gallery-item .caption{
+  position:absolute;
+  bottom:18px;left:18px;
+  z-index:3;
+  font-family:var(--font-alt);
+  font-size:.9rem;
+  letter-spacing:.16em;
+  color:var(--off-white);
+  text-transform:uppercase;
+  opacity:0;
+  transform:translateY(10px);
+  transition:opacity .4s var(--ease), transform .4s var(--ease);
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.gallery-item .caption::before{
+  content:'';
+  width:20px;height:1px;background:var(--gold);
+}
+.gallery-item:hover .caption{opacity:1;transform:translateY(0)}
+
+.g-a{grid-column:span 6;grid-row:span 4}
+.g-b{grid-column:span 3;grid-row:span 4}
+.g-c{grid-column:span 3;grid-row:span 4}
+
+/* ============================================================
+   RÉSEAUX SOCIAUX
+   ============================================================ */
+.social{
+  background:var(--black);
+  position:relative;
+  overflow:hidden;
+}
+.social::before{
+  content:'';
+  position:absolute;inset:0;
+  background:radial-gradient(circle at 90% 10%, rgba(201,151,43,.07), transparent 45%);
+  pointer-events:none;
+}
+.social-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:20px;
+  position:relative;
+  z-index:2;
+}
+.social-card{
+  padding:38px 30px;
+  border:1px solid rgba(245,240,232,.12);
+  border-radius:4px;
+  background:linear-gradient(180deg, rgba(245,240,232,.02), rgba(245,240,232,0));
+  position:relative;
+  overflow:hidden;
+  transition:transform .5s var(--ease), border-color .4s, background .4s;
+  cursor:none;
+  min-height:220px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.social-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:3px;
+  background:linear-gradient(90deg, var(--gold), var(--red));
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .5s var(--ease);
+}
+.social-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(201,151,43,.5);
+  background:linear-gradient(180deg, rgba(201,151,43,.05), rgba(245,240,232,0));
+}
+.social-card:hover::before{transform:scaleX(1)}
+.social-card .icon{
+  width:52px;height:52px;
+  border-radius:12px;
+  background:rgba(201,151,43,.1);
+  color:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:22px;
+  transition:background .3s, color .3s, transform .5s var(--ease);
+}
+.social-card:hover .icon{background:var(--gold);color:var(--black);transform:rotate(-6deg) scale(1.05)}
+.social-card .icon svg{width:26px;height:26px;fill:currentColor}
+.social-card h4{
+  font-family:var(--font-alt);
+  font-size:1.25rem;
+  letter-spacing:.05em;
+  color:var(--off-white);
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.social-card p{
+  font-size:.85rem;
+  color:var(--grey);
+  line-height:1.5;
+}
+.social-card .arrow{
+  margin-top:18px;
+  font-size:1.1rem;
+  color:var(--gold);
+  transition:transform .4s var(--ease);
+}
+.social-card:hover .arrow{transform:translateX(8px)}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact{
+  background:var(--black-2);
+  padding:clamp(80px, 10vw, 130px) 0;
+}
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:30px;
+  position:relative;
+  z-index:2;
+}
+.contact-item{
+  padding:38px 32px;
+  border:1px solid rgba(245,240,232,.1);
+  border-radius:4px;
+  transition:border-color .3s, background .3s, transform .5s var(--ease);
+  position:relative;
+  overflow:hidden;
+  cursor:none;
+}
+.contact-item:hover{
+  border-color:rgba(201,151,43,.4);
+  background:rgba(201,151,43,.03);
+  transform:translateY(-6px);
+}
+.contact-item .label{
+  font-size:.64rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:700;
+  margin-bottom:16px;
+  display:block;
+}
+.contact-item .value{
+  font-family:var(--font-alt);
+  font-size:1.25rem;
+  color:var(--off-white);
+  letter-spacing:.02em;
+  word-break:break-word;
+  transition:color .3s;
+}
+.contact-item:hover .value{color:var(--gold)}
+.contact-item .sub{
+  font-size:.82rem;
+  color:var(--grey);
+  margin-top:8px;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{
+  background:var(--black);
+  padding:80px 0 30px;
+  border-top:1px solid rgba(245,240,232,.06);
+  position:relative;
+  overflow:hidden;
+}
+.footer-bg{
+  position:absolute;
+  bottom:-30px;
+  left:50%;
+  transform:translateX(-50%);
+  font-family:var(--font-display);
+  font-size:clamp(8rem, 22vw, 22rem);
+  color:rgba(245,240,232,.028);
+  white-space:nowrap;
+  pointer-events:none;
+  user-select:none;
+  line-height:.8;
+  letter-spacing:-.02em;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1.2fr;
+  gap:50px;
+  margin-bottom:60px;
+  position:relative;
+  z-index:2;
+}
+.footer-brand .logo{margin-bottom:20px}
+.footer-brand p{
+  font-size:.9rem;
+  color:var(--grey);
+  max-width:340px;
+  line-height:1.7;
+}
+.footer-col h5{
+  font-family:var(--font-body);
+  font-size:.66rem;
+  letter-spacing:.26em;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:700;
+  margin-bottom:22px;
+}
+.footer-col a,
+.footer-col li{
+  display:block;
+  font-size:.88rem;
+  color:rgba(245,240,232,.62);
+  margin-bottom:10px;
+  transition:color .3s, padding-left .3s;
+}
+.footer-col a:hover{color:var(--gold);padding-left:6px}
+
+.footer-bottom{
+  border-top:1px solid rgba(245,240,232,.08);
+  padding-top:28px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+  position:relative;
+  z-index:2;
+  font-size:.78rem;
+  color:var(--grey);
+  letter-spacing:.04em;
+}
+.footer-bottom .design a{
+  color:var(--gold);
+  transition:color .3s;
+}
+.footer-bottom .design a:hover{color:var(--gold-light)}
+
+/* ============================================================
+   WHATSAPP FLOAT
+   ============================================================ */
+.whatsapp-float{
+  position:fixed;
+  right:22px;bottom:22px;
+  width:58px;height:58px;
+  border-radius:50%;
+  background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 14px 30px -10px rgba(37,211,102,.6);
+  z-index:9500;
+  transition:transform .35s var(--ease);
+  animation:pulseWA 2.6s ease-in-out infinite;
+}
+.whatsapp-float:hover{transform:scale(1.08)}
+.whatsapp-float svg{width:30px;height:30px;fill:white}
+.whatsapp-float .tooltip{
+  position:absolute;
+  right:72px;
+  top:50%;
+  transform:translateY(-50%) translateX(10px);
+  background:var(--black);
+  color:var(--off-white);
+  padding:8px 14px;
+  font-size:.72rem;
+  letter-spacing:.1em;
+  border-radius:4px;
+  border:1px solid rgba(201,151,43,.3);
+  white-space:nowrap;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .3s, transform .3s;
+}
+.whatsapp-float:hover .tooltip{opacity:1;transform:translateY(-50%) translateX(0)}
+@keyframes pulseWA{
+  0%,100%{box-shadow:0 14px 30px -10px rgba(37,211,102,.6), 0 0 0 0 rgba(37,211,102,.55)}
+  50%{box-shadow:0 14px 30px -10px rgba(37,211,102,.6), 0 0 0 18px rgba(37,211,102,0)}
+}
+
+/* To-top */
+.to-top{
+  position:fixed;
+  right:22px;bottom:92px;
+  width:46px;height:46px;
+  border-radius:50%;
+  background:var(--black-2);
+  color:var(--gold);
+  border:1px solid rgba(201,151,43,.4);
+  display:flex;align-items:center;justify-content:center;
+  z-index:9500;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .3s, transform .3s, background .3s;
+  font-size:1.1rem;
+}
+.to-top.show{opacity:1;pointer-events:auto}
+.to-top:hover{transform:translateY(-4px);background:var(--gold);color:var(--black)}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:1100px){
+  .hero-grid{grid-template-columns:1fr;gap:60px}
+  .hero-visual{margin:0 auto;max-width:420px}
+  .about-grid{grid-template-columns:1fr;gap:50px}
+  .about-photo{max-width:480px;margin:0 auto}
+  .social-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+  .services-grid{grid-template-columns:repeat(2, 1fr)}
+}
+
+@media (max-width:860px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .services-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(6, 1fr);grid-auto-rows:90px}
+  .g-a{grid-column:span 6;grid-row:span 3}
+  .g-b{grid-column:span 3;grid-row:span 3}
+  .g-c{grid-column:span 3;grid-row:span 3}
+}
+
+@media (max-width:640px){
+  .section{padding:70px 0}
+  .hero{padding:110px 0 60px}
+  .hero-title{font-size:clamp(2.6rem, 14vw, 4.8rem)}
+  .hero-sub{font-size:.9rem;letter-spacing:.16em;gap:8px 14px}
+  .hero-badge{padding:14px 18px;bottom:-16px;left:-16px}
+  .hero-badge strong{font-size:1.4rem}
+  .about-stats{grid-template-columns:1fr 1fr;gap:20px}
+  .social-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:30px}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .whatsapp-float{right:16px;bottom:16px;width:52px;height:52px}
+  .to-top{right:16px;bottom:80px;width:42px;height:42px}
+  .whatsapp-float .tooltip{display:none}
+}
+
+@media (max-width:400px){
+  .container{padding:0 18px}
+  .about-stats{grid-template-columns:1fr}
+}
+
+/* ============================================================
+   PREFERS-REDUCED-MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+  }
+  .hero-bg-text,.hero-glow{display:none}
+}
+
+.no-js .preloader{display:none}
+</style>
+</head>
+<body>
+
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader-glow"></div>
+  <div class="preloader-inner">
+    <div class="preloader-title" aria-label="David Koffi Aza">
+      <span>D</span><span>A</span><span>V</span><span>I</span><span>D</span>
+    </div>
+    <div class="preloader-sub">KOFFI AZA</div>
+    <div class="preloader-bar" id="preloaderBar"></div>
+    <div class="preloader-count"><span id="preloaderCount">00</span> %</div>
+  </div>
+</div>
+
+<!-- ============ CURSOR ============ -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing">
+  <span class="cursor-label" id="cursorLabel">Voir</span>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="container nav">
+    <a href="#accueil" class="logo" aria-label="David Koffi Aza - Accueil">
+      <span class="logo-main"><span>D</span><span>A</span><span>V</span><span>I</span><span>D</span></span>
+      <span class="logo-sub">KOFFI AZA</span>
+      <span class="logo-line"></span>
+    </a>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="#accueil">Accueil</a>
+      <a href="#apropos">À propos</a>
+      <a href="#services">Domaines</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn btn-primary" data-cursor="hover">
+      <span>Me contacter <span class="arrow">→</span></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="mobile-menu" id="mobileMenu">
+  <nav aria-label="Menu mobile">
+    <a href="#accueil"><span class="num">01</span> Accueil</a>
+    <a href="#apropos"><span class="num">02</span> À propos</a>
+    <a href="#services"><span class="num">03</span> Domaines</a>
+    <a href="#galerie"><span class="num">04</span> Galerie</a>
+    <a href="#contact"><span class="num">05</span> Contact</a>
+  </nav>
+  <div class="mobile-meta">
+    <a href="#contact">Contact</a>
+    <span>Bénin</span>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="accueil">
+  <div class="hero-bg-text" id="heroBgText">KOFFI</div>
+  <div class="hero-glow g1"></div>
+  <div class="hero-glow g2"></div>
+
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="dot"></span>
+        Professeur · Prêtre du Fâ · Bénin
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line"><span>DAVID</span></span>
+        <span class="line"><span class="accent">KOFFI AZA</span></span>
+      </h1>
+
+      <div class="hero-sub">
+        <span>Culture.</span>
+        <span>Tradition.</span>
+        <span>Transmission.</span>
+      </div>
+
+      <p class="hero-desc">
+        Professeur certifié, prêtre du Fâ depuis 1997 et acteur culturel
+        engagé. Membre du Comité des rites Vodun du Bénin et président du
+        Conseil National des Cultes Endogènes (CoNaCEB), il œuvre pour la
+        valorisation et la transmission des savoirs ancestraux.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#apropos" class="btn btn-primary" data-cursor="hover">
+          <span>Découvrir <span class="arrow">→</span></span>
+        </a>
+        <a href="#contact" class="btn btn-ghost" data-cursor="hover">
+          <span>Me contacter <span class="arrow">→</span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual" id="heroVisual">
+      <div class="hero-visual-mask">
+        <img src="k.jpeg" alt="Portrait de David Koffi Aza" loading="eager" />
+      </div>
+      <div class="hero-badge">
+        <strong>Fâ</strong>
+        <span>Prêtre depuis 1997</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll to explore</span>
+    <span class="line-anim"></span>
+  </div>
+</section>
+
+<!-- ============ À PROPOS ============ -->
+<section class="section about" id="apropos">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <span class="eyebrow">À propos</span>
+      <h2 class="section-title reveal">QUI EST <span class="accent">DAVID KOFFI AZA</span> ?</h2>
+      <p class="section-lead reveal d1">
+        Un professeur, un guide spirituel et un acteur culturel majeur
+        de la scène béninoise, au service de la tradition et de la
+        transmission.
+      </p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-photo reveal-left">
+        <div class="about-photo-frame">
+          <img src="l.jpeg" alt="David Koffi Aza" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="about-text">
+        <div class="role-list reveal d1">
+          <span>Professeur certifié</span>
+          <span>Prêtre du Fâ</span>
+          <span>Guide culturel</span>
+          <span>Acteur culturel</span>
+          <span>Praticien Vodun</span>
+        </div>
+
+        <p class="lead reveal d2">
+          David Koffi Aza est une figure respectée du paysage culturel
+          et spirituel béninois.
+        </p>
+        <p class="reveal d3">
+          <strong>Prêtre du Fâ depuis 1997</strong>, il est né dans une
+          famille d'initiés vodoun de plusieurs générations. Il est
+          également <strong>professeur certifié</strong> et membre du
+          <strong>Comité des rites Vodun du Bénin</strong>, nommé par le
+          Président Patrice Talon.
+        </p>
+        <p class="reveal d4">
+          Fondateur du <strong>Cabinet Sédégbédo</strong> (pharmacopée
+          traditionnelle) et de l'<strong>Agence Bénin Culture</strong>,
+          il a créé « La Nuit du Vodoun » et organisé en 2008 la plus
+          grande exposition jamais réalisée au Bénin sur le Fâ et le Vodoun.
+        </p>
+        <p class="reveal d5">
+          Aujourd'hui <strong>président du Conseil National des Cultes
+          Endogènes du Bénin (CoNaCEB)</strong>, il anime à travers le
+          monde des conférences sur le Fâ, le Vodoun et les valeurs
+          endogènes. Il intervient régulièrement dans les médias pour
+          partager son savoir et défendre la culture béninoise.
+        </p>
+
+        <div class="about-stats">
+          <div class="stat reveal d3">
+            <strong data-count="1997" data-suffix="">0</strong>
+            <span>Prêtre du Fâ depuis</span>
+          </div>
+          <div class="stat reveal d4">
+            <strong data-count="25" data-suffix="+">0</strong>
+            <span>Années d'expérience</span>
+          </div>
+          <div class="stat reveal d5">
+            <strong data-count="100" data-suffix="%">0</strong>
+            <span>Engagement culturel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline">
+      <div class="section-head">
+        <span class="eyebrow">Parcours</span>
+        <h3 class="section-title reveal" style="font-size:clamp(1.6rem, 3.6vw, 2.6rem);">UN <span class="accent">ENGAGEMENT</span> POUR LA CULTURE</h3>
+      </div>
+      <div class="timeline-list">
+        <div class="timeline-item reveal d1">
+          <div class="year">1997</div>
+          <h4>Prêtre du Fâ</h4>
+          <p>Il embrasse la prêtrise du Fâ, héritier d'une famille d'initiés vodoun.</p>
+        </div>
+        <div class="timeline-item reveal d2">
+          <div class="year">2008</div>
+          <h4>Grande exposition</h4>
+          <p>Il organise la plus grande exposition jamais réalisée au Bénin sur le Fâ et le Vodoun.</p>
+        </div>
+        <div class="timeline-item reveal d3">
+          <div class="year">2013</div>
+          <h4>Coordinateur du Bénin Tofâ</h4>
+          <p>Il coordonne le Bénin Tofâ, consultation annuelle de l'oracle pour tout le pays.</p>
+        </div>
+        <div class="timeline-item reveal d4">
+          <div class="year">2023</div>
+          <h4>Engagement politique</h4>
+          <p>Il rejoint le parti Moele-Bénin et participe aux élections législatives.</p>
+        </div>
+        <div class="timeline-item reveal d5">
+          <div class="year">2024</div>
+          <h4>Comité des rites Vodun</h4>
+          <p>Il est nommé membre du Comité des rites Vodun du Bénin par décret présidentiel.</p>
+        </div>
+        <div class="timeline-item reveal d6">
+          <div class="year">Aujourd'hui</div>
+          <h4>Président du CoNaCEB</h4>
+          <p>Il préside le Conseil National des Cultes Endogènes du Bénin et continue ses conférences.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <span class="eyebrow">Domaines d'intervention</span>
+      <h2 class="section-title reveal">MES <span class="accent">DOMAINES.</span></h2>
+      <p class="section-lead reveal d1">
+        Des domaines complémentaires au service de la culture, de la
+        spiritualité et de la transmission.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card reveal d1" data-cursor="hover">
+        <div class="service-icon">🔮</div>
+        <h3>Prêtrise du Fâ</h3>
+        <p>Consultation, interprétation des signes et guidance spirituelle selon la tradition du Fâ.</p>
+      </article>
+
+      <article class="service-card reveal d2" data-cursor="hover">
+        <div class="service-icon">📚</div>
+        <h3>Enseignement &amp; Transmission</h3>
+        <p>Professeur certifié, il partage son savoir sur la culture, le Fâ et les valeurs endogènes.</p>
+      </article>
+
+      <article class="service-card reveal d3" data-cursor="hover">
+        <div class="service-icon">🌍</div>
+        <h3>Acteur culturel</h3>
+        <p>Promotion de la culture béninoise, organisation d'événements et de manifestations culturelles.</p>
+      </article>
+
+      <article class="service-card reveal d4" data-cursor="hover">
+        <div class="service-icon">🌿</div>
+        <h3>Pharmacopée traditionnelle</h3>
+        <p>Fondateur du Cabinet Sédégbédo, il œuvre pour la valorisation des plantes médicinales.</p>
+      </article>
+
+      <article class="service-card reveal d5" data-cursor="hover">
+        <div class="service-icon">🎤</div>
+        <h3>Conférences &amp; Interventions</h3>
+        <p>Il anime des conférences au Bénin et à l'international sur le Fâ, le Vodoun et la culture.</p>
+      </article>
+
+      <article class="service-card reveal d6" data-cursor="hover">
+        <div class="service-icon">⚖️</div>
+        <h3>Engagement institutionnel</h3>
+        <p>Membre du Comité des rites Vodun et président du CoNaCEB, il défend les cultes endogènes.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERIE ============ -->
+<section class="section gallery" id="galerie">
+  <div class="container">
+    <div class="section-head center">
+      <span class="section-num">03</span>
+      <span class="eyebrow">Galerie</span>
+      <h2 class="section-title reveal">EN <span class="accent">IMAGES.</span></h2>
+      <p class="section-lead reveal d1">
+        Un aperçu de l'univers de David Koffi Aza.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item g-a reveal" data-cursor="media" data-cursor-label="Voir">
+        <img src="k.jpeg" alt="David Koffi Aza" loading="lazy" />
+        <div class="caption">Portrait</div>
+      </div>
+      <div class="gallery-item g-b reveal d1" data-cursor="media" data-cursor-label="Voir">
+        <img src="l.jpeg" alt="David Koffi Aza" loading="lazy" />
+        <div class="caption">En intervention</div>
+      </div>
+      <div class="gallery-item g-c reveal d2" data-cursor="media" data-cursor-label="Voir">
+        <img src="m.jpeg" alt="David Koffi Aza" loading="lazy" />
+        <div class="caption">Sur le terrain</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RÉSEAUX SOCIAUX ============ -->
+<section class="section social" id="reseaux">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <span class="eyebrow">Réseaux sociaux</span>
+      <h2 class="section-title reveal">RETROUVEZ <span class="accent">DAVID.</span></h2>
+      <p class="section-lead reveal d1">
+        Suivez David Koffi Aza sur ses différentes plateformes.
+      </p>
+    </div>
+
+    <div class="social-grid">
+      <a href="https://www.facebook.com/davidkoffiazaofficiel" class="social-card reveal d1" data-cursor="link" target="_blank" rel="noopener">
+        <div>
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
+          </div>
+          <h4>Facebook</h4>
+          <p>Page officielle — actualités et interventions.</p>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+      <a href="https://www.facebook.com/profile.php?id=100068446677088" class="social-card reveal d2" data-cursor="link" target="_blank" rel="noopener">
+        <div>
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
+          </div>
+          <h4>Facebook (profil)</h4>
+          <p>Profil personnel — partages et réflexions.</p>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+      <a href="#" class="social-card reveal d3" data-social="youtube" data-cursor="link">
+        <div>
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M23 12s0-3.3-.4-4.9a3.1 3.1 0 0 0-2.2-2.2C18.8 4.5 12 4.5 12 4.5s-6.8 0-8.4.4a3.1 3.1 0 0 0-2.2 2.2C1 8.7 1 12 1 12s0 3.3.4 4.9a3.1 3.1 0 0 0 2.2 2.2c1.6.4 8.4.4 8.4.4s6.8 0 8.4-.4a3.1 3.1 0 0 0 2.2-2.2C23 15.3 23 12 23 12zM10 15.5v-7l6 3.5z"/></svg>
+          </div>
+          <h4>YouTube</h4>
+          <p>Conférences et interventions vidéo.</p>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <span class="eyebrow">Contact</span>
+      <h2 class="section-title reveal">RESTONS EN <span class="accent">CONTACT.</span></h2>
+    </div>
+
+    <div class="contact-grid">
+      <a href="mailto:contact@davidkoffiaza.bj" class="contact-item reveal d1" data-cursor="link">
+        <span class="label">Email</span>
+        <span class="value">contact@davidkoffiaza.bj</span>
+        <span class="sub">Réponse sous 48h</span>
+      </a>
+
+      <a href="tel:+22900000000" class="contact-item reveal d2" data-cursor="link">
+        <span class="label">Téléphone</span>
+        <span class="value">+229 00 00 00 00</span>
+        <span class="sub">Du lundi au samedi</span>
+      </a>
+
+      <a href="https://www.facebook.com/davidkoffiazaofficiel" target="_blank" rel="noopener" class="contact-item reveal d3" data-cursor="link">
+        <span class="label">Facebook</span>
+        <span class="value">David Koffi Aza Officiel</span>
+        <span class="sub">Page officielle</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-bg" aria-hidden="true">KOFFI</div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#accueil" class="logo" aria-label="David Koffi Aza">
+          <span class="logo-main"><span>D</span><span>A</span><span>V</span><span>I</span><span>D</span></span>
+          <span class="logo-sub">KOFFI AZA</span>
+        </a>
+        <p>
+          Professeur certifié · Prêtre du Fâ · Guide et acteur culturel.
+          Membre du Comité des rites Vodun du Bénin et président du CoNaCEB.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <a href="#accueil">Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#services">Domaines</a>
+        <a href="#galerie">Galerie</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Plus</h5>
+        <a href="#reseaux">Réseaux sociaux</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Suivez-moi</h5>
+        <a href="https://www.facebook.com/davidkoffiazaofficiel" target="_blank" rel="noopener">Facebook (page)</a>
+        <a href="https://www.facebook.com/profile.php?id=100068446677088" target="_blank" rel="noopener">Facebook (profil)</a>
+        <a href="#" data-social="youtube">YouTube</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 David Koffi Aza. Tous droits réservés.</span>
+      <span class="design">Site conçu par <a href="#" data-cursor="link">NOVASAVOIR</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP FLOAT ============ -->
+<a class="whatsapp-float" id="whatsappBtn" href="#" aria-label="Contacter David Koffi Aza sur WhatsApp" data-cursor="link">
+  <svg viewBox="0 0 24 24"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 .1 5.4.1 12c0 2.1.6 4.2 1.6 6L0 24l6.3-1.7a12 12 0 0 0 5.7 1.4h.1c6.6 0 11.9-5.4 11.9-12 0-3.2-1.2-6.2-3.5-8.2zM12 21.8h-.1a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a10 10 0 0 1-1.5-5.2c0-5.5 4.5-9.9 10-9.9 2.7 0 5.2 1 7.1 2.9a9.9 9.9 0 0 1 2.9 7c0 5.5-4.5 9.9-10 9.9zm5.5-7.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.6.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.5.3-.7.3-1.4.2-1.5 0-.1-.2-.2-.4-.4z"/></svg>
+  <span class="tooltip">Écrivez-moi sur WhatsApp</span>
+</a>
+
+<!-- ============ TO TOP ============ -->
+<button class="to-top" id="toTop" aria-label="Retour en haut">↑</button>
+
+<!-- ============ JSON-LD ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "David Koffi Aza",
+  "alternateName": ["Koffi Aza", "David Koffi AZA"],
+  "jobTitle": "Professeur certifié, Prêtre du Fâ, Guide et acteur culturel",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "BJ"
+  },
+  "description": "Professeur certifié, prêtre du Fâ depuis 1997, membre du Comité des rites Vodun du Bénin et président du Conseil National des Cultes Endogènes (CoNaCEB)."
+}
+</script>
+
+<!-- ============================================================
+     SCRIPT
+     ============================================================ -->
+<script>
+/* ==============================
+   CONFIGURATION DU SITE
+   ============================== */
+const SITE_CONFIG = {
+  name: "David Koffi Aza",
+  email: "contact@davidkoffiaza.bj",
+  phone: "+22900000000",
+  whatsapp: "+22900000000",
+  instagram: "",
+  tiktok: "",
+  youtube: "",
+  facebook: "https://www.facebook.com/davidkoffiazaofficiel"
+};
+
+(function(){
+  'use strict';
+
+  const $  = (sel, ctx=document) => ctx.querySelector(sel);
+  const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* 1. PRELOADER */
+  function initPreloader(){
+    const preloader = $('#preloader');
+    const bar = $('#preloaderBar');
+    const count = $('#preloaderCount');
+    if (!preloader || !bar || !count) return;
+
+    let progress = 0;
+    document.body.classList.add('no-scroll');
+
+    const timer = setInterval(() => {
+      progress += Math.random() * 12 + 4;
+      if (progress >= 100) {
+        progress = 100;
+        clearInterval(timer);
+        bar.style.width = '100%';
+        count.textContent = '100';
+        setTimeout(() => {
+          preloader.classList.add('done');
+          document.body.classList.remove('no-scroll');
+          document.body.classList.add('hero-ready');
+          initHeroAnimations();
+          setTimeout(() => { preloader.style.display = 'none'; }, 900);
+        }, 500);
+      } else {
+        bar.style.width = progress + '%';
+        count.textContent = String(Math.floor(progress)).padStart(2, '0');
+      }
+    }, 130);
+  }
+
+  /* 2. CURSOR */
+  function initCursor(){
+    if (window.matchMedia('(hover:none), (pointer:coarse)').matches) return;
+    const dot = $('#cursorDot');
+    const ring = $('#cursorRing');
+    const label = $('#cursorLabel');
+    if (!dot || !ring) return;
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let ringX = mouseX, ringY = mouseY;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%,-50%)`;
+    });
+
+    function animateRing(){
+      ringX += (mouseX - ringX) * 0.18;
+      ringY += (mouseY - ringY) * 0.18;
+      ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%,-50%)`;
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    const hoverTargets = document.querySelectorAll('[data-cursor]');
+    hoverTargets.forEach(el => {
+      const type = el.getAttribute('data-cursor');
+      const customLabel = el.getAttribute('data-cursor-label');
+      el.addEventListener('mouseenter', () => {
+        document.body.classList.remove('cursor-hover','cursor-link','cursor-media');
+        if (type === 'media') {
+          document.body.classList.add('cursor-media');
+          if (customLabel) label.textContent = customLabel;
+        } else if (type === 'link') {
+          document.body.classList.add('cursor-link');
+        } else {
+          document.body.classList.add('cursor-hover');
+          if (customLabel) label.textContent = customLabel;
+          else label.textContent = 'Voir';
+        }
+      });
+      el.addEventListener('mouseleave', () => {
+        document.body.classList.remove('cursor-hover','cursor-link','cursor-media');
+      });
+    });
+
+    document.addEventListener('mouseleave', () => {
+      dot.style.opacity = 0;
+      ring.style.opacity = 0;
+    });
+    document.addEventListener('mouseenter', () => {
+      dot.style.opacity = 1;
+      ring.style.opacity = 1;
+    });
+  }
+
+  /* 3. NAVIGATION */
+  function initNavigation(){
+    const header = $('#header');
+    const burger = $('#burger');
+    const mobileMenu = $('#mobileMenu');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    }, { passive: true });
+
+    if (burger && mobileMenu) {
+      burger.addEventListener('click', () => {
+        const open = burger.classList.toggle('open');
+        mobileMenu.classList.toggle('open', open);
+        burger.setAttribute('aria-expanded', open);
+        document.body.classList.toggle('menu-open', open);
+      });
+
+      $$('#mobileMenu a').forEach(a => {
+        a.addEventListener('click', () => {
+          burger.classList.remove('open');
+          mobileMenu.classList.remove('open');
+          document.body.classList.remove('menu-open');
+          burger.setAttribute('aria-expanded', false);
+        });
+      });
+    }
+
+    $$('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        if (href === '#' || href.length < 2) return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          const offset = 70;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  }
+
+  /* 4. HERO ANIMATIONS */
+  function initHeroAnimations(){
+    const heroVisual = $('#heroVisual');
+    if (!heroVisual || prefersReduced) return;
+
+    const hero = $('.hero');
+    hero.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 18;
+      const y = (e.clientY / window.innerHeight - 0.5) * 18;
+      heroVisual.style.transform = `translate(${x}px, ${y}px)`;
+    });
+    hero.addEventListener('mouseleave', () => {
+      heroVisual.style.transform = 'translate(0,0)';
+    });
+  }
+
+  /* 5. SCROLL ANIMATIONS */
+  function initScrollAnimations(){
+    const els = $$('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-clip');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(el => el.classList.add('in'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    els.forEach(el => io.observe(el));
+
+    const counters = $$('[data-count]');
+    const io2 = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.getAttribute('data-count'), 10);
+          const suffix = el.getAttribute('data-suffix') || '';
+          let current = 0;
+          const duration = 1600;
+          const start = performance.now();
+          function tick(now){
+            const t = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - t, 3);
+            current = Math.floor(eased * target);
+            el.textContent = current + suffix;
+            if (t < 1) requestAnimationFrame(tick);
+            else el.textContent = target + suffix;
+          }
+          requestAnimationFrame(tick);
+          io2.unobserve(el);
+        }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(c => io2.observe(c));
+  }
+
+  /* 6. PARALLAX */
+  function initParallax(){
+    if (prefersReduced) return;
+    const bgText = $('#heroBgText');
+    const bgTexts = $$('.footer-bg');
+    let ticking = false;
+    function update(){
+      const y = window.pageYOffset;
+      if (bgText) bgText.style.transform = `translate(-50%, calc(-50% + ${y * 0.15}px))`;
+      bgTexts.forEach(t => {
+        t.style.transform = `translateX(-50%) translateY(${y * 0.02}px)`;
+      });
+      ticking = false;
+    }
+    window.addEventListener('scroll', () => {
+      if (!ticking){
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  /* 7. SOCIAL LINKS */
+  function initSocialLinks(){
+    const wa = $('#whatsappBtn');
+    if (wa && SITE_CONFIG.whatsapp) {
+      wa.href = `https://wa.me/${SITE_CONFIG.whatsapp.replace(/\D/g,'')}?text=${encodeURIComponent("Bonjour David Koffi Aza, je vous contacte via votre site officiel.")}`;
+    }
+
+    $$('[data-social]').forEach(el => {
+      const key = el.getAttribute('data-social');
+      const url = SITE_CONFIG[key];
+      if (url) {
+        el.href = url;
+        el.target = '_blank';
+        el.rel = 'noopener';
+      } else {
+        el.addEventListener('click', (e) => {
+          e.preventDefault();
+        });
+      }
+    });
+  }
+
+  /* 8. TO TOP */
+  function initToTop(){
+    const btn = $('#toTop');
+    if (!btn) return;
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('show', window.scrollY > 600);
+    }, { passive: true });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* INIT */
+  function init(){
+    initPreloader();
+    initCursor();
+    initNavigation();
+    initScrollAnimations();
+    initParallax();
+    initSocialLinks();
+    initToTop();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();
+</script>
+</body>
+</html>
